@@ -1,3 +1,3 @@
 <x-master>
-    <h1>Este es el index del proyecto</h1>
+    <h1>Bienvenido al centro de administracion, {{ Auth::user()->name }}</h1>
 </x-master>

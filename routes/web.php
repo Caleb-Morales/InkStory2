@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function () {
     // Rutas para Categorías
-    Route::get('/categorias', [CategoriaController::class, 'index']);
+    Route::get('/categorias', [CategoriaController::class, 'index'])->name('index.categorias');
     Route::post('/categorias', [CategoriaController::class, 'store']);
     Route::get('/categorias/edit/{id}', [CategoriaController::class, 'edit']);
     Route::put('/categorias/edit/{id}', [CategoriaController::class, 'putEdit']);
