@@ -20,7 +20,9 @@ class ProductoController extends Controller
     {
         $validate = $r->validate([
             "nombre" => "required|unique:productos,nombre|max:50",
-            "img" => "required|image|mimes:png,jpg|max:3000"
+            "img" => "required|image|mimes:png,jpg|max:3000",
+            "precio" => "required|numeric|min:0",
+            "stock" => "required|integer|min:0"
         ]);
 
         $p = new Producto();
@@ -46,7 +48,9 @@ class ProductoController extends Controller
     {
         $validate = $r->validate([
             "nombre" => "required|unique:productos,nombre,$id|max:50",
-            "img" => "image|mimes:png,jpg|max:3000"
+            "img" => "image|mimes:png,jpg|max:3000",
+            "precio" => "required|numeric|min:0",
+            "stock" => "required|integer|min:0"
         ]);
 
         $producto = Producto::find($id);

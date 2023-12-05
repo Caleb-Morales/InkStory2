@@ -4,7 +4,7 @@
 <div class="container mt-4">
     <div class="row justify-content-between align-items-center mb-4">
         <div class="col-md-6">
-            <h1>Modulo de administración de categorías</h1>
+            <h1>Modulo de administración de Editoriales</h1>
         </div>
         <div class="col-md-6 text-end">
             <!-- Botón para abrir el modal -->
@@ -20,7 +20,7 @@
             <div class="modal-content">
                 <x-form enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitleId">Inserción de Categoría</h5>
+                        <h5 class="modal-title" id="modalTitleId">Inserción de Editorial</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -36,14 +36,14 @@
                         @endif
 
                         <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre categoría</label>
+                            <label for="nombre" class="form-label">Nombre de la Editorial</label>
                             <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="" required>
-                            <small id="helpId" class="form-text text-muted">Ingrese el nombre de la categoría</small>
+                            <small id="helpId" class="form-text text-muted">Ingrese el nombre de la editorial</small>
                         </div>
                         <div class="mb-3">
-                            <label for="img" class="form-label">Imagen Categoría</label>
+                            <label for="img" class="form-label">Logo de Empresa</label>
                             <input type="file" class="form-control" name="img" id="img" placeholder="" aria-describedby="fileHelpId">
-                            <div id="fileHelpId" class="form-text">Seleccione una imagen para la categoría</div>
+                            <div id="fileHelpId" class="form-text">Seleccione una imagen para el logo de la editorial</div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -62,8 +62,8 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>NOMBRE</th>
-                            <th>IMAGEN</th>
+                            <th>EDITORIAL</th>
+                            <th>LOGO</th>
                             <th>ACCIONES</th>
                         </tr>
                     </thead>
@@ -74,8 +74,12 @@
                                 <td>{{ $cat->nombre }}</td>
                                 <td><img src="{{ url($cat->img) }}" alt="{{ $cat->nombre }}" width="64"></td>
                                 <td>
+                                    @can('producto-modificar')
                                     <a href="{{ url('categorias/edit/'.$cat->id)}}" class="btn btn-warning">Modificar</a>
+                                    @endcan
+                                    @can('producto-eliminar')
                                     <x-form-btn method="DELETE" action="{{ url('categorias/delete/'.$cat->id)}}" class="btn btn-danger">Eliminar</x-form-btn>
+                                    @endcan
                                 </td>
                             </tr>
                         @empty

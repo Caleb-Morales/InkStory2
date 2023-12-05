@@ -4,7 +4,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-6">
-            <h1>Modulo de administración de productos</h1>
+            <h1>Modulo de administración de Comics</h1>
         </div>
         <div class="col-md-6">
             <!-- Botón para abrir el modal -->
@@ -26,17 +26,17 @@
                         @endif
                         <x-form enctype="multipart/form-data" style="max-height: 400px; overflow-y: auto;">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="modalTitleId">Insercion de Producto</h5>
+                                <h5 class="modal-title" id="modalTitleId">Insercion de Comics</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label for="" class="form-label">Nombre Producto</label>
+                                    <label for="" class="form-label">Nombre del Comic</label>
                                     <input type="text" class="form-control" name="nombre" aria-describedby="helpId" placeholder="" value="{{ old('nombre') }}">
                                     <small id="helpId" class="form-text text-muted">Help text</small>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="" class="form-label">Imagen Producto</label>
+                                    <label for="" class="form-label">Portada</label>
                                     <input type="file" class="form-control" name="img" placeholder="" aria-describedby="fileHelpId">
                                     <div id="fileHelpId" class="form-text">Help text</div>
                                 </div>
@@ -51,7 +51,7 @@
                                     <small id="helpId" class="form-text text-muted">Help text</small>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="" class="form-label">Categoria</label>
+                                    <label for="" class="form-label">Comics</label>
                                     <select class="form-select form-select-lg" name="catId">
                                         @foreach ($listaCat as $cat)
                                             <option value="{{ $cat->id }}">{{ $cat->nombre }}</option>
@@ -76,11 +76,11 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>NOMBRE</th>
-                        <th>IMAGEN</th>
+                        <th>NOMBRE DEL COMIC</th>
+                        <th>PORTADA</th>
                         <th>PRECIO</th>
                         <th>STOCK</th>
-                        <th>CATEGORIA</th>
+                        <th>COMICS</th>
                         <th>ACCIONES</th>
                     </tr>
                 </thead>
