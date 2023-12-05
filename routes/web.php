@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/productos/delete/{id}', [ProductoController::class, "delete"]);
 
     // Rutas para Ventas
-    Route::get('/ventas/create', [VentaController::class, 'index'])->name('salidas.index');
+    Route::get('/ventas', [VentaController::class, 'index'])->name('salidas.index');
     Route::post('/ventas/store', [VentaController::class, 'store'])->name('salidas.store');
 
     // Rutas para permisos

@@ -42,7 +42,7 @@
                             <a class="nav-link" href="{{ 'productos' }}">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ 'ventas/create' }}">Ventas</a>
+                            <a class="nav-link" href="{{ 'ventas' }}">Ventas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ 'permission' }}">Permisos</a>
