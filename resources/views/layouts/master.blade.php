@@ -20,9 +20,7 @@
               <x-nav-link href="{{ route('/categorias') }}" :active="request()->routeIs('/categorias')">
                 {{ __('Categorias') }}
             </x-nav-link>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{}}">Inicio</a>
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
               </li>
